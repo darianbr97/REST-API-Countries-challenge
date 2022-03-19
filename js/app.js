@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
 const fetchData = async() => {
     try {
-        const res = await fetch(`https://restcountries.com/v3.1/all`)
+        const res = await fetch(`../json/apiCountries.json`)
         const data = await res.json()
         console.log(data)
         paintCard(data)

@@ -242,6 +242,12 @@ main {
 @media (max-width: 500px) {
   .countries {
     grid-template-columns: repeat(1, minmax(0, 1fr)); } }
+html {
+  height: 100%; }
+
+body {
+  height: 100%; }
+
 nav {
   padding: 60px 0 0 60px;
   background-color: var(--fondoMain);
@@ -357,7 +363,10 @@ nav {
     #details img {
       width: 100%;
       margin-bottom: 20px; }
-    #details .border-countries .btnBorders {
-      grid-template-columns: repeat(3, 1fr); } }
+    #details .border-countries {
+      margin-top: 0px; }
+      #details .border-countries .btnBorders {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 7px; } }
 
 /*# sourceMappingURL=styles.css.map */
