@@ -1,0 +1,159 @@
+@mixin styleBarSearch {
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0 0 5px var(--boxShadow);
+  font-size: 1.2rem;
+}
+
+@mixin hoverBarSearch {
+  border: 2px solid var(--colorText);
+  box-shadow: 0 5px 5px var(--hoverShadow);
+}
+
+@keyframes desplazamientoFilter {
+  from {
+    transform: translateY(-50px) scale(0.5);
+  }
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+
+main {
+  min-height: 100%;
+  background-color: var(--fondoMain);
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+
+  .searches {
+    display: flex;
+    justify-content: space-between;
+
+    .search-country {
+      height: 40px;
+      width: 360px;
+      position: relative;
+      padding-left: 30px;
+
+      .fa-magnifying-glass {
+        font-size: 1.2rem;
+        position: absolute;
+        top: 13px;
+        left: 44px;
+        color: rgba(128, 128, 128, 0.678);
+      }
+
+      input {
+        @include styleBarSearch();
+        width: 100%;
+        padding: 12px 0 12px 40px;
+        background-color: var(--fondoCardHeaderSearch);
+        transition: 0.2s ease all;
+        color: var(--colorText);
+      }
+
+      input:hover,
+      input:focus {
+        @include hoverBarSearch();
+        outline: none;
+      }
+    }
+
+    .search-region {
+      width: 200px;
+      padding-right: 30px;
+      z-index: 200;
+
+      .select-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--fondoCardHeaderSearch);
+        padding: 0 10px;
+        @include styleBarSearch();
+        cursor: pointer;
+        transition: 0.2s ease all;
+        position: relative;
+
+        .fa-angle-down {
+          font-size: 1.4rem;
+          color: var(--colorText);
+        }
+
+        h4 {
+          color: var(--colorText);
+        }
+      }
+
+      .select-content:hover,
+      .select-content.active {
+        @include hoverBarSearch();
+      }
+
+      .select-content.active:before {
+        content: "";
+        display: block;
+        height: 0;
+        width: 0;
+        border-top: 10px solid var(--colorText);
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid transparent;
+        position: absolute;
+        bottom: -20px;
+        left: calc(50% - 10px);
+      }
+
+      .options {
+        @include styleBarSearch();
+        // padding: 10px;
+        margin-top: 15px;
+        width: 170px;
+        background-color: white;
+        z-index: 100;
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        background-color: var(--fondoCardHeaderSearch);
+
+        &-title {
+          margin: 0;
+          width: 100%;
+          padding: 7px 10px;
+          transition: 0.2s ease all;
+          color: var(--colorText);
+        }
+
+        &-title:hover {
+          background-color: var(--selectContent);
+          border-radius: 7px;
+          color: white;
+        }
+      }
+
+      .options.active {
+        display: block;
+        animation: desplazamientoFilter 0.3s forwards;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    .searches {
+      flex-direction: column;
+
+      .search-country {
+        input {
+          width: 85%;
+        }
+      }
+
+      .search-region {
+        margin: 20px 0 0 30px;
+      }
+    }
+  }
+}

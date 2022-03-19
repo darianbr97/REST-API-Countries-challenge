@@ -1,0 +1,56 @@
+html {
+  font-family: $typeLetter;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+header {
+  //   height: 6%;
+  background-color: var(--fondoCardHeaderSearch);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.205);
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--colorText);
+  }
+
+  button {
+    border: none;
+    height: 30px;
+    width: 120px;
+    border-radius: 7px;
+    background-color: var(--fondoCardHeaderSearch);
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--colorText);
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background-color: var(--colorText);
+    color: var(--btnDM);
+    box-shadow: 0 0 20px rgb(128, 128, 128);
+  }
+}
+
+@media (max-width: 375px) {
+  header {
+    padding: 15px 5px 15px 20px;
+    h1 {
+      font-size: 1.3rem;
+    }
+    button {
+      font-size: 1.3rem;
+    }
+  }
+}

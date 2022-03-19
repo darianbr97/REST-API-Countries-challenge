@@ -1,0 +1,30 @@
+$typeLetter: "Nunito Sans", sans-serif;
+
+body {
+  --fondoMain: hsl(0, 0%, 98%);
+  --fondoCardHeaderSearch: hsl(0, 0%, 100%);
+  --colorText: black;
+  --colorDetails: blue;
+  --btnDM: white;
+  --selectContent: black;
+  --boxShadow: rgba(128, 128, 128, 0.24);
+  --hoverShadow: rgba(128, 128, 128, 0.568);
+}
+// $fondoCardHeaderSearch: hsl(0, 0%, 100%);
+// $fondoMain: hsl(0, 0%, 98%);
+// $fondoCardHeaderSearch: hsl(0, 0%, 100%);
+// $colorText: black;
+
+.dark-mode {
+  --fondoMain: #202d36;
+  --fondoCardHeaderSearch: #2b3743;
+  --colorText: white;
+  --colorDetails: yellow;
+  --btnDM: black;
+  --selectContent: rgba(218, 218, 218, 0.425);
+  --boxShadow: rgba(218, 218, 218, 0.425);
+  --hoverShadow: rgba(218, 218, 218, 0.788);
+}
+// $fondoMain_DM: #202d36;
+// $fondoCardHeaderSearch_DM: #2b3743;
+// $colorText_DM: white;
